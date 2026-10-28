@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local runtime data
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+backend/data/raw/*
+!backend/data/raw/.gitkeep
+backend/data/chroma/*
+!backend/data/chroma/.gitkeep
+backend/data/app.db
+backend/data/app.db-*
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Models / caches
+.cache/
+**/easyocr/
+*.pt
+*.bin
+*.onnx
+
+# Logs / coverage
+*.log
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

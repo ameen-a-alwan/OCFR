@@ -1,0 +1,26 @@
+# OCFR — one container, UI + API on the same origin
+#
+#   docker compose up -d --build
+#   open http://localhost
+#   API:  http://localhost/api/...
+#   docs: http://localhost/api/docs
+
+services:
+  ocfr:
+    build: .
+    image: ocfr:latest
+    container_name: ocfr
+    ports:
+      - "80:80"
+    volumes:
+      # Persist SQLite, uploads, chroma
+      - ocfr-data:/app/backend/data
+    environment:
+      # Optional overrides (not required for same-origin /api)
+      - JWT_SECRET=${JWT_SECRET:-ocfr-change-me-in-production}
+      - VT_API_KEY=${VT_API_KEY:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    restart: unless-stopped
+
+volumes:
+  ocfr-data:

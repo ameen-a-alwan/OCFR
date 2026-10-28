@@ -1,0 +1,21 @@
+# Git / IDE
+.git
+.cursor
+**/.venv
+**/node_modules
+**/.next
+**/__pycache__
+**/*.pyc
+**/.env
+**/.env.local
+**/frontend-legacy
+
+# Local data (mounted as volume at runtime)
+backend/data
+backend/.venv
+
+# Docs / noise
+**/*.md
+!README.md
+logs_examples
+WEB\ VIRUS
